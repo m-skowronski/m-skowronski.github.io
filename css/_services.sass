@@ -1,0 +1,31 @@
+.services
+    text-align: center
+    position: relative
+    h2
+        color: $blue
+    hr
+        background: $blue
+    .services-wrap
+        display: flex
+        justify-content: space-around
+        color: #555
+        margin: 40px 200px 10px 200px
+        figure
+            max-width: 300px
+            padding: 5px
+            img
+                width: 60px
+                height: auto
+            figcaption
+                font-size: 13px
+                line-height: 1.4
+
+@media screen and ( max-width: 1300px)
+    .services    
+        .services-wrap
+            margin: 40px 0px 10px 0px
+@media screen and ( max-width: 760px)
+    .services    
+        .services-wrap
+            flex-direction: column
+            align-items: center

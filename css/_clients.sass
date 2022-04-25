@@ -1,0 +1,138 @@
+.clients
+    text-align: center
+    position: relative
+    h2
+        color: $blue
+    hr
+        background: $blue
+    p
+        font-size: 13px
+        line-height: 1.4
+        color: #555
+        max-width: 400px
+        margin: 30px auto
+        padding: 0 10px
+    .clients-logos
+        margin: 30px auto 10px auto
+        max-width: 900px
+        padding: 10px 0
+        display: flex
+        flex-direction: row
+        border-bottom: 1px solid $blue
+        transition: .4s ease-in-out
+        position: relative
+        .client-unit
+            width: 150px
+            height: 35px
+            margin: 0 5px
+            background: 
+                    repeat: no-repeat
+                    position: center
+                    size: auto 100%
+            &:hover
+                cursor: pointer
+            &:nth-child(1)
+                background-image: url('../Images/logo-google.png')
+            &:nth-child(2)
+                background-image: url('../Images/logo-booking.png')
+            &:nth-child(3)
+                background-image: url('../Images/logo-dropbox.png')
+            &:nth-child(4)
+                background-image: url('../Images/logo-facebook.png')
+            &:nth-child(5)
+                background-image: url('../Images/logo-groupon.png')
+            &:nth-child(6)
+                background-image: url('../Images/logo-paypal.png')
+
+        .active-mark
+            position: absolute
+            width: 0
+            height: 0
+            border-style: solid
+            border-width: 10px 10px 0 10px
+            border-color: $blue transparent transparent transparent
+            transition: .2s
+            bottom: -10px
+    .quote-wrap
+        position: relative
+        margin: 0 auto 40px auto
+        text-align: center
+        max-width: 840px
+        overflow: hidden
+        padding: 0 70px
+        text-size-adjust: none
+        .quote
+            opacity: 0
+            position: absolute
+            top: 0
+            left: -100%
+        .quote-active
+            position: static
+            opacity: 1
+            margin-bottom: 100px
+            transition: .7s ease-in-out
+            margin: 0
+            p
+                max-width: 100%
+            p:nth-child(2)
+                font-weight: 700
+            strong
+                color: $blue
+        .previous
+            height: 40px
+            position: absolute
+            left: 0
+            top: calc( 50% - 55px )
+        .next
+            height: 40px
+            position: absolute
+            right: 0
+            top: calc( 50% - 55px )
+            transform: rotate(180deg)
+        .previous:hover, .next:hover
+            cursor: pointer
+@media screen and ( max-width: 940px )
+    .clients
+        padding: 0 10px
+        .clients-logos
+            max-width: 360px
+            .client-unit
+                max-width: 50px
+                max-height: 50px
+                margin: 0 5px
+                background: 
+                    repeat: no-repeat
+                    position: center
+                    size: auto 100%
+                filter: grayscale(95%)
+                transition: .2s
+                &:hover
+                    filter: grayscale(0%)
+                &:nth-child(1)
+                    background-image: url('../Images/logo-google-small.svg')
+                &:nth-child(2)
+                    background-image: url('../Images/logo-booking-small.svg')
+                &:nth-child(3)
+                    background-image: url('../Images/logo-dropbox-small.svg')
+                &:nth-child(4)
+                    background-image: url('../Images/logo-facebook-small.svg')
+                &:nth-child(5)
+                    background-image: url('../Images/logo-groupon-small.svg')
+                &:nth-child(6)
+                    background-image: url('../Images/logo-paypal-small.svg')
+            .active
+                filter: grayscale(0%)
+@media screen and ( max-width: 660px )
+    .clients
+        .quote-wrap
+            padding: 0 10px 20px 10px
+            .next
+                height: 25px
+                bottom: 0
+                top: auto
+                right: 30px
+            .previous
+                height: 25px
+                bottom: 0px
+                top: auto
+                left: 30px

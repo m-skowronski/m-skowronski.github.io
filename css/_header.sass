@@ -1,0 +1,227 @@
+header
+    display: flex
+    flex-direction: column
+    position: relative
+    background:
+        image: url(../Images/hero-01.jpg)
+        attachment: fixed
+        size: cover
+        repeat: no-repeat
+        position: center
+    color: $white
+    nav
+        height: 80px
+        display: flex
+        align-items: center
+        margin: 0 100px
+        .logo, .menu
+            width: 50%
+            padding-left: 10px
+        .menu 
+            display: flex
+            justify-content: flex-end
+            width: 100%
+            padding: 5px 15px
+            a
+                padding: 0 5px
+                transition: .1s
+            a:hover
+                opacity: .7
+            .hamburger
+                display: none
+        .logo
+            filter: invert(90%)
+            width: 140px
+            height: auto
+            
+    .center
+        display: flex
+        height: 100%
+        align-items: center
+        justify-content: center
+        flex-direction: column
+        text-align: center
+        margin: 150px 0
+        padding: 10px
+        font-size: 15px
+        .logo-big
+            filter: invert(90%)
+            width: 230px
+            height: auto
+        p
+            margin: 5px 0 25px 0
+            span
+                display: block
+        a
+            background: none
+            padding: 8px 40px
+            border: 2px solid $white
+            border-radius: 4px            
+            color: $white
+            font-weight: 700
+            transition: .1s ease-in-out
+            &:hover
+                background: $white
+                color: #444
+    .scroll
+        display: flex
+        flex-direction: column
+        text-align: center
+        align-items: center
+        margin-bottom: 40px
+        img
+            width: 30px
+            height: auto
+            filter: invert(1)
+            display: block
+        p
+            font-size: 12px
+            text-transform: uppercase
+            margin: 10px 5px
+
+@media screen and ( max-width: 940px )
+    header
+        nav
+            margin: 0
+
+@media screen and ( max-width: 640px )
+    header
+        overflow: hidden
+        nav
+            .menu
+                .links
+                    display: flex
+                    flex-direction: column
+                    width: 100%
+                    height: calc(100% - 220px)
+                    position: absolute
+                    font-size: 30px
+                    line-height: 1.2
+                    text-align: center
+                    justify-content: space-around
+                    top: 80px
+                    left: 0
+                    margin-left: 100vw
+                    transition: .5s ease
+                .links-active
+                    margin-left: 0
+                #hamburger
+                    display: flex
+                    flex-direction: column
+                    justify-content: space-between
+                    width: 40px
+                    height: 30px
+                    margin: 20px
+                    .line
+                        height: 2px
+                        background: $white
+                    .line:nth-child(1)
+                        width: 37px
+                    .line:nth-child(2)
+                        width: 30px
+                    .line:nth-child(3)
+                        width: 40px
+                .hamburger-active
+                    .line:nth-child(2)
+                        animation: hide .4s ease forwards
+                    .line:nth-child(1)
+                        animation: cross1 .4s ease forwards
+                    .line:nth-child(3)
+                        animation: cross2 .4s ease forwards
+                .hamburger-basic
+                    .line:nth-child(2)
+                        animation: show .4s ease forwards 
+                    .line:nth-child(1)
+                        animation: hamb1 .4s ease forwards 
+                    .line:nth-child(3)
+                        animation: hamb2 .4s ease forwards 
+
+                #hamburger:hover
+                    cursor: pointer
+    .center
+        transition: .5s ease
+    .center-remove
+        transform: translate(-100%)
+
+@keyframes hide
+    0%
+    
+    45%
+        width: 0
+    100%
+        width: 0
+@keyframes cross1
+    0%
+        
+    45%
+        width: 0
+        transform: rotate(0deg)
+        transform-origin: left top
+    55%
+        width: 0
+        transform: rotate(45deg)
+        transform-origin: left top
+    100%
+        width: 41px
+        transform: rotate(45deg)
+        transform-origin: left top
+@keyframes cross2
+    0%
+        
+    45%
+        width: 0
+        transform: rotate(0deg)
+        transform-origin: left top
+    65%
+        width: 0
+        transform: rotate(-45deg)
+        transform-origin: left top
+    100%
+        transform: rotate(-45deg)
+        transform-origin: left top
+
+@keyframes show
+    0%
+        width: 0
+    60%
+        width: 0
+    100%
+        width: 30px
+
+@keyframes hamb1
+    0%
+        transform: rotate(45deg)
+        transform-origin: left top
+    45%
+        width: 0
+        transform: rotate(45deg)
+        transform-origin: left top
+    55%
+        width: 0
+        transform: rotate(0deg)
+        transform-origin: left top
+    100%
+        width: 37px
+        transform: rotate(0deg)
+        transform-origin: left top
+@keyframes hamb2
+    0%
+        transform: rotate(-45deg)
+        transform-origin: left top
+    45%
+        width: 0
+        transform: rotate(-45deg)
+        transform-origin: left top
+    55%
+        width: 0
+        transform: rotate(0deg)
+        transform-origin: left top
+    100%
+        width: 37px
+        transform: rotate(0deg)
+        transform-origin: left top
+
+@media screen and ( max-width: 720px )
+    header
+        background-attachment: scroll
+    

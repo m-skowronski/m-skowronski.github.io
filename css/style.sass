@@ -1,0 +1,79 @@
+@font-face 
+    font-family: 'Raleway'
+    src: url(../Font/Raleway-Regular.otf)
+    font-style: normal
+    font-weight: 400
+@font-face 
+    font-family: 'Raleway'
+    src: url(../Font/Raleway-Bold.otf)
+    font-style: normal
+    font-weight: 700
+
+$white: #fafcfe
+$blue: #2980b9
+
+*, *::before, *::after
+    box-sizing: border-box
+body
+    margin: 0
+    padding: 0
+    font-family: 'Raleway'
+    background: $white
+    overflow-x: hidden
+::selection
+    background: $blue
+    color: $white
+a
+    text-decoration: none
+    color: inherit
+
+header::before, .portfolio::before, .offices::before
+    content: ""
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 15vh 0 0 50vw
+    border-color: transparent transparent transparent $white
+        
+header::after, .portfolio::after, .offices::after
+    content: ""
+    position: absolute
+    bottom: 0
+    right: 0
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 0 0 15vh 50vw
+    border-color: transparent transparent $white transparent
+
+.services::after, .team::after, .clients::after
+    position: absolute
+    left: 0
+    content: ""
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 15vh 50vw 0 50vw
+    border-color: $white transparent transparent transparent
+    z-index: 10
+    
+h2
+    text-transform: uppercase
+    margin-top: 50px
+    margin-bottom: 0px
+hr
+    width: 30px
+    height: 5px
+    border: none
+
+
+@import header
+@import services
+@import portfolio
+@import team
+@import offices
+@import clients
+@import contact

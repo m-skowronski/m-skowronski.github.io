@@ -1,0 +1,62 @@
+.contact
+    text-align: center
+    position: relative
+    position: relative
+    background:
+        image: url(../Images/hero-03.jpg)
+        color: rgba(0, 0, 0, .8)
+        blend-mode: darken
+        attachment: fixed
+        size: cover
+        repeat: no-repeat
+        position: center
+    padding: 15vh 10px 0 10px
+    text-align: center
+    h2
+        color: $white
+    hr
+        background: $white
+    p
+        font-size: 13px
+        line-height: 1.4
+        max-width: 400px
+        margin: auto
+        color: white
+        opacity: 0.7
+        margin-top: 20px
+    .contacts-wrap
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        max-width: 1000px
+        margin: 20px auto 0 auto
+        flex-wrap: wrap
+        a
+            transition: .3s ease
+            margin: 40px 20px 0 20px
+            width: 200px
+
+            h4
+                color: $white
+                margin: 10px 0 2px 0
+            p
+                margin: 0
+            img
+                width: 60px
+                filter: invert(.9)
+            &:hover
+                transform: translateY(-5px)
+                img
+                    filter: invert(1)
+                h4
+                    color: white
+                p
+                    opacity: 1
+        a:nth-child(3)    
+            img
+                width: 80px
+                margin: -10px
+    footer
+        padding: 70px 0
+        p
+            margin: 0 auto
